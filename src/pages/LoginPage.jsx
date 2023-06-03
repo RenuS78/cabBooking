@@ -16,7 +16,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    alert(`email/usernmae : guest \n password : 123`);
+    alert(`email/usernmae : guest  \n password : 123`);
   }, []);
   useEffect(() => {
     inputRef.current.focus();
@@ -40,11 +40,13 @@ const LoginPage = () => {
   };
   const checkUserLoginInformation = (event) => {
     event.preventDefault();
-    username === "guest" && password === "123" ? check() : OnError();
+    username === "guest" || (username === "Guest" && password === "123")
+      ? check()
+      : OnError();
 
     username === "" || password === "" ? setError(true) : setError(false);
 
-    username !== "guest" || password !== "123"
+    username !== "guest" || username === "Guest" || password !== "123"
       ? setError(true)
       : setError(false);
   };

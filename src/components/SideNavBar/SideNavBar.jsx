@@ -23,8 +23,8 @@ import HomeContent from "../HomeMainSection/HomeContent";
 import SoloImagesPage from "../../pages/SoloImagesPage";
 
 const MiniDrawer = () => {
-  const [open, setOpen] = React.useState(true);
-  const [toggle, setToggle] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const [toggle, setToggle] = React.useState(false);
   const [hover, setHover] = React.useState(false);
   const [upload, setUpload] = React.useState(false);
   const [SoloPage, setSoloPage] = React.useState(false);
@@ -177,7 +177,7 @@ const MiniDrawer = () => {
         style={{
           backgroundImage: `url(${background1})`,
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "fixed",
+          backgroundPosition: "center",
           backgroundSize: "contain",
           minHeight: "100vh",
         }}

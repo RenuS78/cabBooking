@@ -64,10 +64,13 @@ const StyledForm = styled.form`
 `;
 const StyledInput = styled.input`
   height: 9vh;
-  width: 25vw;
+  width: 350px;
   border-radius: 10px;
   padding-left: 20px;
   font-size: 1.3rem;
+  @media (max-width: 900px) {
+    width: 250px;
+  }
 `;
 const StyledLabel = styled.label`
   color: #0f0e0e;
@@ -79,10 +82,13 @@ const StyledLabel = styled.label`
 `;
 const StyledButton = styled.button`
   height: 9vh;
-  width: 25vw;
+  width: 350px;
   text-transform: uppercase;
   font-weight: bolder;
   border-radius: 10px;
   background-color: #0c0d11;
   color: white;
+  @media (max-width: 900px) {
+    width: 250px;
+  }
 `;

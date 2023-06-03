@@ -3,27 +3,24 @@ import styled from "styled-components";
 import ImageCard from "./ImageCard";
 export default function StandardImageList() {
   return (
-    <StyledImageContainer>
+    <StyledImageContainer className="image_Container" type="none">
       {itemData.map((item, index) => {
         return (
-          <div>
-            <ul className="image_Conatiner" type="none">
-              <li>
-                <ImageCard image={item.url} title={item.title} />
-              </li>
-            </ul>
-          </div>
+          <li key={index}>
+            <ImageCard image={item.url} title={item.title} />
+          </li>
         );
       })}
     </StyledImageContainer>
   );
 }
 
-const StyledImageContainer = styled.div`
+const StyledImageContainer = styled.ul`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  row-gap: 10px;
 `;
 
 const itemData = [

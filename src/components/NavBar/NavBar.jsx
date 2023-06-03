@@ -19,7 +19,9 @@ const PrimarySearchAppBar = () => {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+  const LogOutFunc = () => {
+    navigate("/");
+  };
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -54,13 +56,10 @@ const PrimarySearchAppBar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={LogOutFunc}>Log Out</MenuItem>
     </Menu>
   );
-  const LogOutFunc = () => {
-    navigate("/");
-  };
+
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
