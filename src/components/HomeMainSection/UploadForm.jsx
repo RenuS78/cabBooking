@@ -20,7 +20,7 @@ const UploadForm = (props) => {
   return (
     <StyledContainer>
       <StyledForm onSubmit={uploadOnSubmit}>
-        {props.name == "solo" ? (
+        {props.name === "solo" ? (
           <StyledLabel htmlFor="typeUrl">
             enter your name and send to us.
           </StyledLabel>

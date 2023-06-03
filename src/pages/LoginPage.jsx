@@ -68,7 +68,7 @@ const LoginPage = () => {
                 </span>
               )}
               {/* <span  id={borderClass && 'border'}  > */}
-              <span className="input" id={username != "" && "changeBg"}>
+              <span className="input" id={username !== "" && "changeBg"}>
                 <EmailIcon />
                 <input
                   type="text"

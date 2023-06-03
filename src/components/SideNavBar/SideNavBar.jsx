@@ -177,7 +177,6 @@ const MiniDrawer = () => {
         style={{
           backgroundImage: `url(${background1})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "80% auto",
           backgroundPosition: "fixed",
           backgroundSize: "contain",
           minHeight: "100vh",
