@@ -5,13 +5,9 @@ import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import "./SideNavBar.css";
 import PrimarySearchAppBar from "../NavBar/NavBar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 
 const AppBarContainer = ({
   open,
-  handleDrawerOpen2,
-  hover,
   toggle,
   IconButton,
   handleDrawerClose,
@@ -22,11 +18,7 @@ const AppBarContainer = ({
   return (
     <>
       {/*.......... nav bar at top inclued logo , close/open toggle button and profilepart ............... */}
-      <AppBar
-        position="fixed"
-        open={open}
-        onMouseEnter={hover ? handleDrawerOpen2 : undefined}
-      >
+      <AppBar position="fixed" open={open}>
         <Toolbar
           className="navbar_whole_container_toolbarTag"
           style={{ padding: "0px", margin: "0px" }}
@@ -42,7 +34,6 @@ const AppBarContainer = ({
           )}
           {/*........................ toggle sidenav with navbar icon ................................*/}
           {toggle ? (
-            //use '' when want closing left arrow icon inside sidenav
             <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
               <MenuIcon />
             </IconButton>

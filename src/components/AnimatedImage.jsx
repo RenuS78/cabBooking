@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import VanillaTilt from 'vanilla-tilt';
-import picture from '../pictures/img-01.webp';
+import React, { useEffect, useRef } from "react";
+import VanillaTilt from "vanilla-tilt";
+import picture from "../pictures/img-01.webp";
 
 function Tilt(props) {
   const { options, ...rest } = props;
@@ -33,22 +33,20 @@ const AnimatedImage = () => {
   const options = {
     scale: 1.2,
     speed: 1000,
-    max: 30
+    max: 30,
   };
 
   const style = {
     width: "250px",
     height: "250px",
-  }
+  };
 
   return (
     <>
-      <Tilt className="box" style={style} options={options} >
+      <Tilt className="box" style={style} options={options}>
         <img src={picture} alt="animatedpic" />
       </Tilt>
     </>
   );
-}
+};
 export default AnimatedImage;
-
-

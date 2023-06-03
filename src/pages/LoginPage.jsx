@@ -2,26 +2,23 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import AnimatedImage from "../components/AnimatedImage";
-// import '../../node_modules/bootstrap-icons/bootstrap-icons.css';
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 import ErrorIcon from "@mui/icons-material/Error";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
-const LoginPage = ({ logFunc, callNavigaton }) => {
-  const [username, setUsername] = useState("guest");
-  const [password, setPassword] = useState("123");
+const LoginPage = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const [log, setLog] = useState(false);
 
   const inputRef = useRef();
   const navigate = useNavigate();
 
-  const callHome = () => {
-    navigate("/home");
-  };
   useEffect(() => {
-    console.log(inputRef);
+    alert(`email/usernmae : guest \n password : 123`);
+  }, []);
+  useEffect(() => {
     inputRef.current.focus();
     return () => {};
   }, [inputRef]);
@@ -36,8 +33,7 @@ const LoginPage = ({ logFunc, callNavigaton }) => {
   };
 
   const check = () => {
-    setLog(true);
-    logFunc(log, callHome);
+    navigate("/home");
   };
   const OnError = () => {
     setError(true);
@@ -90,12 +86,8 @@ const LoginPage = ({ logFunc, callNavigaton }) => {
                     style={{ color: "maroon", visibility: "hidden" }}
                   />
                 )}
-
-                {/* </span> */}
               </span>
-              {
-                //  error ? <span className='errorMsg'>give valid password</span> : <span className='errorMsg' style={{display:'none'}}>give valid username</span>
-              }
+
               <span className="input">
                 <LockIcon />
                 <input
@@ -160,7 +152,6 @@ const StyledInnerDiv = styled.div`
 
   .errorMsg {
     background-color: #80000081;
-    /* padding: 2px; */
     color: maroon;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -269,29 +260,6 @@ const FormContainer = styled.div`
       width: 100%;
     }
   }
-  /* #border{
-    height: 3rem;
-    width: 19em;
-    border-radius: 2rem ;
-    animation: startBorder 0.5s  infinite ease-in ;
-rgb(232, 240, 254), rgba(70, 90, 126, 0.4)
-    @keyframes startBorder{
-        0%{box-shadow:1px 1px 1px 1px  #57b846dd;}
-        50%{box-shadow:1px 1px 10px 15px  #4dd435dd;}
-        80%{box-shadow:1px 1px 10px 25px  #d4dfd2dd;}
-        99%{box-shadow:1px 1px 10px 25px  #41f122dd;}
-        100%{box-shadow:none;}
-
-    }
-} */
-
-  /* className={borderClass? 'noBorder' : 'border'}
-    .border{
-        border:2px solid red;
-    }
-    <div className=""></div>noBorder{
-
-    } */
 
   .loginButton {
     border: none;

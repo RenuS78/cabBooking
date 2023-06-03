@@ -7,7 +7,6 @@ const UploadForm = (props) => {
 
   const uploadOnSubmit = (event) => {
     event.preventDefault();
-    // alert(urlData);
     alert(`data - ${urlData} sended to ${sendUrl}`);
   };
 
@@ -21,7 +20,15 @@ const UploadForm = (props) => {
   return (
     <StyledContainer>
       <StyledForm onSubmit={uploadOnSubmit}>
-        <StyledLabel htmlFor="typeUrl">enter name and send to us.</StyledLabel>
+        {props.name == "solo" ? (
+          <StyledLabel htmlFor="typeUrl">
+            enter your name and send to us.
+          </StyledLabel>
+        ) : (
+          <StyledLabel htmlFor="typeUrl">
+            enter group member name and send to us.
+          </StyledLabel>
+        )}
         <StyledInput
           type="text"
           id="typeUrl"
@@ -46,7 +53,6 @@ const StyledContainer = styled.div`
 `;
 
 const StyledForm = styled.form`
-  /* background-color: #4158d0; */
   height: 40vh;
   display: flex;
   flex-direction: column;
@@ -61,7 +67,6 @@ const StyledInput = styled.input`
   width: 25vw;
   border-radius: 10px;
   padding-left: 20px;
-
   font-size: 1.3rem;
 `;
 const StyledLabel = styled.label`
@@ -69,6 +74,8 @@ const StyledLabel = styled.label`
   font-size: 2rem;
   text-align: center;
   text-transform: capitalize;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 `;
 const StyledButton = styled.button`
   height: 9vh;

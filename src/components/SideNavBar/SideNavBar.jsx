@@ -1,14 +1,9 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-//below line to add inner left arrow icon to close sidenav
-// import {  useTheme } from '@mui/material/styles';
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
@@ -17,30 +12,23 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
-// add below two for inside left arrow icon to close sidenav
-// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import background1 from "../../pictures/taxi-service-in-delhi.jpg";
 
 //////******** */
 import AppBarContainer from "./AppBarContainer";
 
 import sideNavBg from "../../../src/pictures/bg-01.jpg";
 import "./SideNavBar.css";
-// import ListItemsContainer from './ListItemsContainer';
 import HomeContent from "../HomeMainSection/HomeContent";
 import SoloImagesPage from "../../pages/SoloImagesPage";
 
 const MiniDrawer = () => {
-  //below for closing nav with left arrow icon inside sidenav
-  // const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [toggle, setToggle] = React.useState(true);
   const [hover, setHover] = React.useState(false);
   const [upload, setUpload] = React.useState(false);
   const [SoloPage, setSoloPage] = React.useState(false);
-  // const [collection,setCollection] =React.useState("unactive");
 
-  // const navigate = useNavigate();
   //add logo on close of sidenav here.......................................
   const Heading = "companyName"; //add heading/logo on open of side nav here............................
   const handleDrawerOpen = () => {
@@ -69,13 +57,11 @@ const MiniDrawer = () => {
   const uplaodFile = () => {
     setUpload(true);
     setSoloPage(false);
-    // setCollection("unactive");
   };
 
   const goTOSolo = () => {
     setSoloPage(true);
     setUpload(false);
-    // setCollection("unactive");
   };
 
   return (
@@ -103,16 +89,9 @@ const MiniDrawer = () => {
           <div className="sideNav_content_container">
             {/*................... on sidevav open logo seaction data ..............................*/}
             <DrawerHeader className="header_logo_section_sidenav">
-              <h3 className="header_logo_section_sidenav_heading">
-                {Heading}
-                {/* //insert icon button for adding sidenav inside closing left arrow icon */}
-                {/* <IconButton onClick={handleDrawerClose} style={{color:'white',height:'3rem',width:'4rem'}}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton> */}
-              </h3>
+              <h3 className="header_logo_section_sidenav_heading">{Heading}</h3>
             </DrawerHeader>
             {/*.................... sidenav bar inner content................... */}
-            {/* <div  className='itmes_sideNav' > */}
             {/*......open on hover...... onMouseEnter={condition ? value : undefined} */}
             <List
               onMouseEnter={hover ? handleDrawerOpen2 : undefined}
@@ -144,7 +123,6 @@ const MiniDrawer = () => {
                       }}
                     >
                       <LocalTaxiIcon style={{ color: "white" }} />
-                      {/* <i class="bi bi-cloud-arrow-up-fill text-light"></i> */}
                     </ListItemIcon>
                     <ListItemText
                       primary={text}
@@ -178,7 +156,6 @@ const MiniDrawer = () => {
                       }}
                     >
                       <PersonPinIcon style={{ color: "white" }} />
-                      {/* <i class="bi bi-image-fill text-light"></i> */}
                     </ListItemIcon>
                     <ListItemText
                       primary={text}
@@ -188,8 +165,6 @@ const MiniDrawer = () => {
                 </ListItem>
               ))}
             </List>
-
-            {/* </div> */}
           </div>
         </div>
       </Drawer>
@@ -198,14 +173,19 @@ const MiniDrawer = () => {
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 3 }}
-        onMouseEnter={hover ? handleDrawerOpen2 : undefined}
+        onMouseEnter={hover ? handleDrawerClose2 : undefined}
+        style={{
+          backgroundImage: `url(${background1})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "80% auto",
+          backgroundPosition: "fixed",
+          backgroundSize: "contain",
+          minHeight: "100vh",
+        }}
       >
         <DrawerHeader />
-        {/* <Typography paragraph > */}
         {upload && <HomeContent />}
         {SoloPage && <SoloImagesPage />}
-        {/* {collection === "active" && <CollectorFilterImagesPage />} */}
-        {/* </Typography> */}
       </Box>
     </Box>
   );
@@ -241,7 +221,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 

@@ -1,14 +1,12 @@
-import React from 'react';
-import StandardImageList from '../components/soloImages/SoloImages';
+import React from "react";
+import StandardImageList from "../components/soloImages/SoloImages";
 
 const SoloImagesPage = () => {
-  // const functionInSolo = props.functionInSolo;
   return (
     <div>
-      <StandardImageList/>
-      {/* <button onClick={()=>functionInSolo("true")}>clickme</button> */}
+      <StandardImageList />
     </div>
-  )
-}
+  );
+};
 
-export default SoloImagesPage
+export default SoloImagesPage;

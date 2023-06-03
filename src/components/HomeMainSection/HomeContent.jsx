@@ -3,7 +3,7 @@ import styled from "styled-components";
 import UploadForm from "./UploadForm";
 import PersonIcon from "@mui/icons-material/Person";
 import GroupIcon from "@mui/icons-material/Group";
-import uploadIcon from "../../pictures/uploadIcon.png";
+
 const HomeContent = () => {
   const [openSection, setOpenSection] = useState(false);
   const [openSection2, setOpenSection2] = useState(false);
@@ -21,7 +21,6 @@ const HomeContent = () => {
       <StyledWrapper>
         <div>
           <StyledSection onClick={openSectionContent}>
-            {/* <img src={uploadIcon} alt="upload solo" height="80%" /> */}
             <PersonIcon
               style={{
                 height: "100px",
@@ -34,7 +33,6 @@ const HomeContent = () => {
 
         <div>
           <StyledSection onClick={openSectionContent2}>
-            {/* <img src={uploadIcon} alt="upload solo" height="80%" /> */}
             <GroupIcon
               style={{
                 height: "100px",
@@ -56,25 +54,31 @@ export default HomeContent;
 const StyledWrapperContainer = styled.div`
   display: flex;
   height: 100%;
+  justify-content: flex-center;
+  align-items: center;
 
-  /* flex-direction: column; */
-  justify-content: flex-start;
+  @media (max-width: 900px) {
+    flex-wrap: wrap-reverse;
+  }
 `;
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  row-gap: 20px;
+
+  @media (max-width: 900px) {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
 `;
-const styledFolders = styled.img`
-  /* &:hover{
-    width: ; }*/
-`;
+
 const StyledSection = styled.div`
   height: 30vh;
-  width: 20vw;
+  min-width: 20vw;
   background: linear-gradient(-135deg, #291928, #662a62, #c226b7);
-  /* width:30vw; */
   margin: 5px;
   box-shadow: 5px 5px 10px black;
   display: flex;
@@ -87,8 +91,6 @@ const StyledSection = styled.div`
   padding: 20px;
 
   &:hover {
-    /* width:30.5vw;
-  height: 30.5vh; */
     box-shadow: 10px 10px 25px black;
   }
   .heading {
